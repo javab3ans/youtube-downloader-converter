@@ -1,129 +1,136 @@
-# 🎵 YouTube Downloader & MP3 Converter
+````markdown
+# 📥 NeuralNine YouTube Downloader & Converter v0.2 Alpha
 
-A simple Python CLI tool to download YouTube videos, playlists, and convert them into high-quality MP3 files with embedded metadata and album art.
+A simple Python tool that downloads **YouTube playlists** and automatically converts them into **MP3 files with metadata and thumbnails** using `yt-dlp` and `ffmpeg`.
 
 ---
 
 ## 🚀 Features
 
-* 📥 Download single YouTube videos
-* 📂 Download entire playlists (auto-organized)
-* 🎧 Convert videos to MP3 automatically
-* 🖼️ Embed thumbnail as album art
-* 🏷️ Add metadata (artist/title when available)
-* 📁 Smart folder structure:
-
-  ```
-  Playlist Name/
-    01 - Song Title.mp3
-    02 - Song Title.mp3
-  ```
+- 🎵 Download full YouTube playlists  
+- 🎧 Convert videos to MP3 (192kbps)  
+- 🖼️ Embed thumbnails into audio files  
+- 🏷️ Add metadata (title, artist where available)  
+- 📁 Automatically organize files by playlist  
+- ⚡ Powered by `yt-dlp` + `ffmpeg`
 
 ---
 
-## 🧱 Project Structure
+## 📦 Requirements
 
-```
-.
-├── main.py                 # CLI entry point
-├── youtube_downloader.py   # Handles downloading & yt-dlp config
-├── file_converter.py       # Converts video to MP3 (MoviePy)
-```
-
----
-
-## ⚙️ Requirements
+- Python 3.8+
+- yt-dlp
+- imageio-ffmpeg
 
 Install dependencies:
 
 ```bash
-pip install yt-dlp imageio-ffmpeg moviepy pytube
-```
+py -m pip install yt-dlp imageio-ffmpeg
+````
 
 ---
 
-## ▶️ Usage
-
-Run the program:
+## ▶️ How to Run
 
 ```bash
 python main.py
 ```
 
-You’ll see:
+You will see:
 
 ```
 What do you want?
 
-(1) Download YouTube Videos Manually
-(2) Download a YouTube Playlist
-(3) Download YouTube Videos and Convert Into MP3
+(1) Download a YouTube Playlist (MP3)
 ```
 
 ---
 
-## 🔧 Options Explained
+## 📥 Usage
 
-### 1. Download YouTube Videos Manually
+### Step 1: Run the program
 
-* Input one or more video URLs
-* Choose quality (low → very high)
+```bash
+python main.py
+```
 
-### 2. Download a Playlist
+### Step 2: Select option
 
-* Paste playlist URL
-* Automatically downloads and organizes files
+```
+Choice: 1
+```
 
-### 3. Download + Convert to MP3
+### Step 3: Enter details
 
-* Downloads best audio
-* Converts to `.mp3`
-* Embeds metadata + album art
+```
+Please choose a quality (low, medium, high, very high): high
+Enter the link to the playlist: https://www.youtube.com/playlist?list=XXXX
+```
 
----
+### Step 4: Done 🎉
 
-## 📌 Notes
-
-* Uses **yt-dlp** for downloading and processing
-* Automatically installs/uses FFmpeg via `imageio-ffmpeg`
-* Output files are saved in:
-
-  * Playlist folder (if playlist)
-  * `Single/` folder (if individual videos)
+Your playlist will be downloaded and converted automatically.
 
 ---
 
-## ⚠️ Known Issues / Improvements
+## 📁 Output Structure
 
-* `file_converter.py` is not currently used in `main.py` (conversion is handled by `yt-dlp`)
-* Quality selection is not fully implemented in downloader logic
-* No error handling for invalid URLs
-* Filename slicing (`filename[:-4]`) may break for non-standard extensions
-
----
-
-## 🛠️ Future Improvements
-
-* [ ] Add progress bars
-* [ ] Improve error handling
-* [ ] Support more formats (wav, flac)
-* [ ] GUI version (Tkinter or web app)
-* [ ] Better metadata parsing
+```
+Playlist_Name/
+    01 - Video Title.mp3
+    02 - Video Title.mp3
+    03 - Video Title.mp3
+```
 
 ---
 
-## 📄 License
+## ⚙️ How It Works
 
-MIT License (or specify your own)
-
----
-
-## 👤 Author
-
-Built by **javab3ans**
+* Uses `yt-dlp` to extract playlist videos
+* Downloads best available audio
+* Converts audio to MP3 using FFmpeg
+* Embeds metadata + thumbnails
+* Saves files in organized folders
 
 ---
 
-## 💡 Tip
+## 🧠 Notes
 
-For best results, use option **(3)** — it handles everything automatically (download + convert + metadata + album art).
+* The **quality option is currently not used** (reserved for future upgrades)
+* Only playlist downloads are supported in this version
+* FFmpeg is handled automatically via `imageio-ffmpeg`
+
+---
+
+## 🛠️ Project Structure
+
+```
+youtube-downloader/
+│
+├── main.py
+├── youtube_downloader.py
+└── README.md
+```
+
+---
+
+## 🔮 Future Improvements
+
+* 🎚️ Real audio quality control (128 / 192 / 320 kbps)
+* 📊 Download progress bar
+* ⏯️ Resume interrupted downloads
+* 🎵 Single video download mode
+* 🖥️ GUI version (Tkinter / Electron)
+
+---
+
+## ⚠️ Disclaimer
+
+This project is for **educational purposes only**.
+Please respect YouTube’s Terms of Service and copyright laws.
+
+---
+
+## 👨‍💻 Author
+
+Built as a Python learning project inspired by NeuralNine-style tutorials.
