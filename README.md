@@ -33,7 +33,7 @@ py -m pip install yt-dlp imageio-ffmpeg
 ## ▶️ How to Run
 
 ```bash
-python main.py
+py main.py
 ```
 
 You will see:
@@ -89,7 +89,6 @@ Playlist_Name/
 
 ## 🧠 Notes
 
-* The **quality option is currently not used** (reserved for future upgrades)
 * Only playlist downloads are supported in this version
 * FFmpeg is handled automatically via `imageio-ffmpeg`
 
@@ -103,17 +102,8 @@ youtube-downloader/
 ├── main.py
 ├── youtube_downloader.py
 └── README.md
+└── LICENSE.md
 ```
-
----
-
-## 🔮 Future Improvements
-
-* 🎚️ Real audio quality control (128 / 192 / 320 kbps)
-* 📊 Download progress bar
-* ⏯️ Resume interrupted downloads
-* 🎵 Single video download mode
-* 🖥️ GUI version (Tkinter / Electron)
 
 ---
 
