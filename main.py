@@ -3,20 +3,18 @@ print("Loading...")
 
 import youtube_downloader
 
-print('''
-What do you want?
 
-(1) Download a YouTube Playlist (MP3)
-''')
+def is_playlist(url: str) -> bool:
+    return "list=" in url.lower()
 
-choice = input("Choice: ")
 
-if choice == "1":
-    link = input("Enter the link to the playlist: ")
+link = input("Enter a YouTube playlist URL: ")
 
+if is_playlist(link):
+    print("Playlist detected ✔")
     print("Downloading playlist...")
     youtube_downloader.download_playlist(link)
     print("Download finished!")
-
 else:
-    print("Invalid input! Terminating...")
+    print("❌ This does not look like a playlist URL.")
+    print("Make sure it contains 'list=' (YouTube playlist link).")
