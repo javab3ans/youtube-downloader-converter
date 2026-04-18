@@ -34,7 +34,7 @@ def get_opts():
     }
 
 
-def download_playlist(playlist_url, quality=None):
+def download_playlist(playlist_url):
     # quality kept for future use (ignored for now)
     with yt_dlp.YoutubeDL(get_opts()) as ydl:
         ydl.download([playlist_url])
