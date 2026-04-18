@@ -1,44 +1,54 @@
-import pytube
+import yt_dlp
+import imageio_ffmpeg
 
-def download_video(url, resolution):
-    itag = choose_resolution(resolution)
-    video = pytube.YouTube(url)
-    stream = video.streams.get_by_itag(itag)
-    stream.download()
-    return stream.default_filename
+def get_ffmpeg():
+    return imageio_ffmpeg.get_ffmpeg_exe()
 
-def download_videos(urls, resolution):
+def get_opts():
+    return {
+        "format": "bestaudio/best",
+        "ffmpeg_location": get_ffmpeg(),
+
+        # Smart folder + numbering
+        "outtmpl": "%(playlist_title|Single)s/%(playlist_index|01)02d - %(title)s.%(ext)s",
+
+        # Album art
+        "writethumbnail": True,
+
+        # Try to parse artist/title
+        "parse_metadata": [
+            "%(artist)s - %(title)s"
+        ],
+
+        # MP3 + metadata + artwork
+        "postprocessors": [
+            {
+                "key": "FFmpegExtractAudio",
+                "preferredcodec": "mp3",
+                "preferredquality": "192",
+            },
+            {"key": "FFmpegMetadata"},
+            {"key": "EmbedThumbnail"},
+        ],
+
+        "embed_metadata": True,
+        "quiet": False,
+    }
+
+def download_video(url, quality):
+    ydl_opts = get_opts()
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        ydl.download([url])
+
+def download_videos(urls, quality):
     for url in urls:
-        download_video(url, resolution)
+        download_video(url, quality)
 
-def download_playlist(url, resolution):
-    playlist = pytube.Playlist(url)
-    download_videos(playlist.video_urls, resolution)
-
-def choose_resolution(resolution):
-    if resolution in ["low", "360", "360p"]:
-        itag = 18
-    elif resolution in ["medium", "720", "720p", "hd"]:
-        itag = 22
-    elif resolution in ["high", "1080", "1080p", "fullhd", "full_hd", "full hd"]:
-        itag = 137
-    elif resolution in ["very high", "2160", "2160p", "4K", "4k"]:
-        itag = 313
-    else:
-        itag = 18
-    return itag
-
+def download_playlist(playlist_url, quality):
+    ydl_opts = get_opts()
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        ydl.download([playlist_url])
 
 def input_links():
-    print("Enter the links of the videos (end by entering 'STOP'):")
-
-    links = []
-    link = ""
-
-    while link != "STOP" and link != "stop":
-        link = input()
-        links.append(link)
-
-    links.pop()
-
-    return links
+    links = input("Enter URL(s) (comma separated): ")
+    return [link.strip() for link in links.split(",")]

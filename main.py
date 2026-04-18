@@ -11,11 +11,6 @@ What do you want?
 (1) Download YouTube Videos Manually
 (2) Download a YouTube Playlist
 (3) Download YouTube Videos and Convert Into MP3
-
-Downloading copyrighted YouTube videos is illegal!
-I am not responsible for your downloads! Go at your own risk!
-
-Copyright (c) NeuralNine 2020
 ''')
 
 choice = input("Choice: ")
@@ -35,8 +30,7 @@ elif choice == "3":
     links = youtube_downloader.input_links()
     for link in links:
         print("Downloading...")
-        filename = youtube_downloader.download_video(link, 'low')
+        filename = youtube_downloader.download_video(link, 'very high')
         print("Converting...")
-        file_converter.convert_to_mp3(filename)
 else:
     print("Invalid input! Terminating...")
