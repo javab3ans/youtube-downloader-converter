@@ -21,19 +21,19 @@ A simple Python tool that downloads **YouTube playlists** and automatically conv
 - Python 3.8+
 - yt-dlp
 - imageio-ffmpeg
-
-Install dependencies:
-
-```bash
-py -m pip install yt-dlp imageio-ffmpeg
 ````
 
+```bash
+Install dependencies:
+
+py -m pip install yt-dlp imageio-ffmpeg
+```
 ---
 
 ## ▶️ How to Run
 
 ```bash
-python main.py
+py main.py
 ```
 
 You will see:
@@ -60,14 +60,7 @@ python main.py
 Choice: 1
 ```
 
-### Step 3: Enter details
-
-```
-Please choose a quality (low, medium, high, very high): high
-Enter the link to the playlist: https://www.youtube.com/playlist?list=XXXX
-```
-
-### Step 4: Done 🎉
+### Step 3: Done 🎉
 
 Your playlist will be downloaded and converted automatically.
 
@@ -96,7 +89,6 @@ Playlist_Name/
 
 ## 🧠 Notes
 
-* The **quality option is currently not used** (reserved for future upgrades)
 * Only playlist downloads are supported in this version
 * FFmpeg is handled automatically via `imageio-ffmpeg`
 
@@ -110,17 +102,8 @@ youtube-downloader/
 ├── main.py
 ├── youtube_downloader.py
 └── README.md
+└── LICENSE.md
 ```
-
----
-
-## 🔮 Future Improvements
-
-* 🎚️ Real audio quality control (128 / 192 / 320 kbps)
-* 📊 Download progress bar
-* ⏯️ Resume interrupted downloads
-* 🎵 Single video download mode
-* 🖥️ GUI version (Tkinter / Electron)
 
 ---
 
@@ -133,4 +116,4 @@ Please respect YouTube’s Terms of Service and copyright laws.
 
 ## 👨‍💻 Author
 
-Built as a Python learning project inspired by NeuralNine-style tutorials.
+Built as a Python learning project inspired by NeuralNine.
