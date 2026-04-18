@@ -60,14 +60,7 @@ python main.py
 Choice: 1
 ```
 
-### Step 3: Enter details
-
-```
-Please choose a quality (low, medium, high, very high): high
-Enter the link to the playlist: https://www.youtube.com/playlist?list=XXXX
-```
-
-### Step 4: Done 🎉
+### Step 3: Done 🎉
 
 Your playlist will be downloaded and converted automatically.
 
