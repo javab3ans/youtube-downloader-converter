@@ -52,12 +52,10 @@ What do you want?
 
 ```bash
 python main.py
-```
 
-### Step 2: Select option
-
-```
-Choice: 1
+Welcome to NeuralNine YouTube Downloader and Converter v0.2 Alpha
+Loading...
+Enter a YouTube playlist URL: https://www.youtube.com/playlist?list=enter_your_playlist_id_here
 ```
 
 ### Step 3: Done 🎉
