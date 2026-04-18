@@ -133,4 +133,4 @@ Please respect YouTube’s Terms of Service and copyright laws.
 
 ## 👨‍💻 Author
 
-Built as a Python learning project inspired by NeuralNine-style tutorials.
+Built as a Python learning project inspired by NeuralNine.
