@@ -12,11 +12,10 @@ What do you want?
 choice = input("Choice: ")
 
 if choice == "1":
-    quality = input("Please choose a quality (low, medium, high, very high): ")
     link = input("Enter the link to the playlist: ")
 
     print("Downloading playlist...")
-    youtube_downloader.download_playlist(link, quality)
+    youtube_downloader.download_playlist(link)
     print("Download finished!")
 
 else:
