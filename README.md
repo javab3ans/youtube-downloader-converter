@@ -32,22 +32,6 @@ py -m pip install yt-dlp imageio-ffmpeg
 
 ## ▶️ How to Run
 
-```bash
-py main.py
-```
-
-You will see:
-
-```
-What do you want?
-
-(1) Download a YouTube Playlist (MP3)
-```
-
----
-
-## 📥 Usage
-
 ### Step 1: Run the program
 
 ```bash
@@ -58,7 +42,7 @@ Loading...
 Enter a YouTube playlist URL: https://www.youtube.com/playlist?list=enter_your_playlist_id_here
 ```
 
-### Step 3: Done 🎉
+### Step 2: Done 🎉
 
 Your playlist will be downloaded and converted automatically.
 
