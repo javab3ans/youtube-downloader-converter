@@ -21,13 +21,13 @@ A simple Python tool that downloads **YouTube playlists** and automatically conv
 - Python 3.8+
 - yt-dlp
 - imageio-ffmpeg
-
-Install dependencies:
-
-```bash
-py -m pip install yt-dlp imageio-ffmpeg
 ````
 
+```bash
+Install dependencies:
+
+py -m pip install yt-dlp imageio-ffmpeg
+```
 ---
 
 ## ▶️ How to Run
